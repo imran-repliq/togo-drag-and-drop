@@ -3,6 +3,7 @@
 import { Input } from "@/components/ui/input";
 import ContainerLayout from "../components/ContainerLayout/ContainerLayout";
 import { Button } from "@/components/ui/button";
+import React, { useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -11,8 +12,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import toast from "react-hot-toast";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
+import APIKit from "../shared/APIkit";
 
 export default function Home() {
   const handleSubmitTodo = (e) => {
@@ -54,6 +55,16 @@ export default function Home() {
     e.target.reset();
     console.log(todoText);
   };
+
+  // useEffect(() => {
+  //   APIKit.globalTodo()
+  //     .then((response) => {
+  //       console.log("Global Todo Data:", response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // }, []);
 
   return (
     <ContainerLayout>
